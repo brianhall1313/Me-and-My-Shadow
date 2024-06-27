@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwpuy0ynb7hrt"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_4ugkp"]
+[ext_resource type="Texture2D" uid="uid://b7cojg03ods66" path="res://player_shadow.png" id="2_5nto2"]
+[ext_resource type="Resource" uid="uid://dafo1q538id3y" path="res://ShadowMovementData.tres" id="2_num86"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6cuk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5nto2")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyaoo"]
+size = Vector2(4, 14)
+
+[node name="shadow" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+up_direction = Vector2(0, 1)
+floor_constant_speed = true
+floor_snap_length = 3.0
+script = ExtResource("1_4ugkp")
+movement_data = ExtResource("2_num86")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6cuk8")
+animation = &"new_animation"
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_tyaoo")
