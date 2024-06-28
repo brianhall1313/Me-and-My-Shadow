@@ -3,6 +3,10 @@ extends CharacterBody2D
 
 @export var movement_data: PlayerMovementData
 
+
+const PUSH_FORCE = 20
+
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -17,7 +21,10 @@ func _physics_process(delta):
 	handle_jump()
 	handle_acceleration(direction,delta)
 	handle_friction(direction,delta)
+	handle_block()
 	move_and_slide()
+
+
 
 func handle_gravity(delta):
 	if not is_on_floor():
@@ -50,3 +57,14 @@ func handle_friction(direction,delta):
 func take_damage():
 	GlobalSignalBus.player_damage.emit()
 
+
+func handle_block():
+	if is_on_floor():
+		for i in get_slide_collision_count():
+			var collision = get_slide_collision(i)
+			var collision_block = collision.get_collider()
+			if collision_block.name=="black_block":
+				collision_block.push_black(velocity.x,true)
+			elif collision_block.name == "white_block":
+				collision_block.push_white(velocity.x,true)
+	

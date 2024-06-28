@@ -12,9 +12,9 @@ func open():
 
 
 func _on_interaction_area_body_entered(_area):
-	player_in_area = true
-	print("player has entered area(black door)")
+		player_in_area = true
+		print("player has entered area(black door)")
 
 func _on_interaction_area_body_exited(_area):
-	player_in_area = false
-	print("player has left area(black door)")
+		player_in_area = false
+		print("player has left area(black door)")

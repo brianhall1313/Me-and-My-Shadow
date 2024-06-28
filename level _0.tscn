@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2lnrkb8w4j16"]
+
+[ext_resource type="Script" path="res://test_level.gd" id="1_njng2"]
+[ext_resource type="PackedScene" uid="uid://u8fiysfj1plv" path="res://black_door.tscn" id="2_x44na"]
+[ext_resource type="PackedScene" uid="uid://c00jo8qmg4n57" path="res://white_door.tscn" id="3_1si8p"]
+[ext_resource type="PackedScene" uid="uid://bwpuy0ynb7hrt" path="res://shadow.tscn" id="4_pb7mk"]
+[ext_resource type="PackedScene" uid="uid://blhemidxahef0" path="res://player.tscn" id="5_a1qq2"]
+[ext_resource type="PackedScene" uid="uid://c5vs0rnqra8n2" path="res://white_key.tscn" id="9_lqacj"]
+[ext_resource type="PackedScene" uid="uid://biqrfuoenibp4" path="res://black_key.tscn" id="10_24alu"]
+
+[node name="test_level" type="Node2D"]
+script = ExtResource("1_njng2")
+
+[node name="bottom_background" type="ColorRect" parent="."]
+offset_top = 160.0
+offset_right = 320.0
+offset_bottom = 320.0
+
+[node name="top_background" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 160.0
+color = Color(0, 0, 0, 1)
+
+[node name="black_door" parent="." instance=ExtResource("2_x44na")]
+position = Vector2(224, 184)
+
+[node name="white_door" parent="." instance=ExtResource("3_1si8p")]
+position = Vector2(224, 136)
+
+[node name="floor_white" type="StaticBody2D" parent="."]
+
+[node name="collision_white" type="CollisionPolygon2D" parent="floor_white"]
+position = Vector2(0, 64)
+polygon = PackedVector2Array(0, 96, 0, -64, 64, -64, 64, 80, 256, 80, 256, -64, 320, -64, 320, 96)
+
+[node name="shape_white" type="Polygon2D" parent="floor_white/collision_white"]
+
+[node name="floor_black" type="StaticBody2D" parent="."]
+
+[node name="collision_black" type="CollisionPolygon2D" parent="floor_black"]
+position = Vector2(0, 80)
+polygon = PackedVector2Array(0, 80, 0, 240, 64, 240, 64, 96, 256, 96, 256, 240, 320, 240, 320, 240, 320, 80)
+
+[node name="shape_black" type="Polygon2D" parent="floor_black/collision_black"]
+color = Color(0, 0, 0, 1)
+
+[node name="shadow" parent="." instance=ExtResource("4_pb7mk")]
+position = Vector2(80, 184)
+
+[node name="player" parent="." instance=ExtResource("5_a1qq2")]
+position = Vector2(80, 136)
+
+[node name="white_key" parent="." instance=ExtResource("9_lqacj")]
+position = Vector2(248, 136)
+
+[node name="black_key" parent="." instance=ExtResource("10_24alu")]
+position = Vector2(136, 184)
