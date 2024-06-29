@@ -8,7 +8,7 @@ func _on_quit_button_up():
 
 
 func _on_new_game_button_up():
-	get_tree().change_scene_to_file("res://test_level.tscn")
+	get_tree().change_scene_to_file("res://level_select.tscn")
 
 
 func _on_credits_button_up():

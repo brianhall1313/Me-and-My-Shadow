@@ -11,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://c5vs0rnqra8n2" path="res://white_key.tscn" id="9_nbb66"]
 [ext_resource type="PackedScene" uid="uid://biqrfuoenibp4" path="res://black_key.tscn" id="10_fajgw"]
 
-[node name="test_level" type="Node2D"]
+[node name="level_2" type="Node2D"]
 script = ExtResource("1_egakf")
+level = 2
 
 [node name="bottom_background" type="ColorRect" parent="."]
 offset_top = 160.0
@@ -62,9 +63,6 @@ position = Vector2(92, 187)
 [node name="black_spike3" parent="." instance=ExtResource("7_ccusp")]
 position = Vector2(100, 187)
 
-[node name="black_spike4" parent="." instance=ExtResource("7_ccusp")]
-position = Vector2(148, 187)
-
 [node name="black_spike7" parent="." instance=ExtResource("7_ccusp")]
 position = Vector2(188, 187)
 
@@ -91,21 +89,6 @@ position = Vector2(243, 187)
 
 [node name="black_spike15" parent="." instance=ExtResource("7_ccusp")]
 position = Vector2(251, 187)
-
-[node name="black_spike5" parent="." instance=ExtResource("7_ccusp")]
-position = Vector2(140, 187)
-
-[node name="black_spike6" parent="." instance=ExtResource("7_ccusp")]
-position = Vector2(132, 187)
-
-[node name="white_spike" parent="." instance=ExtResource("8_q2jlp")]
-position = Vector2(84, 147)
-
-[node name="white_spike2" parent="." instance=ExtResource("8_q2jlp")]
-position = Vector2(92, 147)
-
-[node name="white_spike3" parent="." instance=ExtResource("8_q2jlp")]
-position = Vector2(100, 147)
 
 [node name="white_spike4" parent="." instance=ExtResource("8_q2jlp")]
 position = Vector2(148, 147)

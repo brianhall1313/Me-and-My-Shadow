@@ -21,7 +21,7 @@ func _physics_process(delta):
 	handle_jump()
 	handle_acceleration(direction,delta)
 	handle_friction(direction,delta)
-	handle_block()
+	handle_block(direction)
 	move_and_slide()
 
 
@@ -58,13 +58,13 @@ func take_damage():
 	GlobalSignalBus.player_damage.emit()
 
 
-func handle_block():
+func handle_block(direction):
 	if is_on_floor():
 		for i in get_slide_collision_count():
 			var collision = get_slide_collision(i)
 			var collision_block = collision.get_collider()
-			if collision_block.name=="black_block":
-				collision_block.push_black(velocity.x,true)
-			elif collision_block.name == "white_block":
-				collision_block.push_white(velocity.x,true)
+			if collision_block.name=="black_block" and collision_block.position.y>position.y:
+				collision_block.push(Vector2(direction,0))
+			elif collision_block.name == "white_block" and collision_block.position.y<position.y:
+				collision_block.push(Vector2(direction,0))
 	

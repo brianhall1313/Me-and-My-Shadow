@@ -8,6 +8,7 @@ size = Vector2(32, 32)
 
 [node name="black_block" type="CharacterBody2D" groups=["Block"]]
 up_direction = Vector2(0, 1)
+floor_constant_speed = true
 floor_snap_length = 4.0
 script = ExtResource("1_j4hv0")
 

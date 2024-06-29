@@ -2,26 +2,34 @@ extends CharacterBody2D
 class_name MovableBlock
 
 
-const BLOCK_MAX_VELOCITY = 200
-const FRICTION = 1800
+const ACCELERATION = 2000
+const SPEED = 100
+const FRICTION = 2000
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var is_being_pushed:bool = false
+var push_vector:Vector2 = Vector2.ZERO
+
 func _ready():
 	if name == "black_block":
 		gravity *= -1
-	GlobalSignalBus.connect("push_black",push_black)
-	GlobalSignalBus.connect("push_black",push_white)
+	GlobalSignalBus.connect("pushing",pushing)
 
 
 
 func _physics_process(delta):
-	velocity.x = 0
+	
 	handle_gravity(delta)
 	handle_friction(delta)
+	handle_acceleration(push_vector,delta)
+	if is_being_pushed:
+		print(velocity, " " , name , " other data: ", delta)
 	move_and_slide()
-
+	is_being_pushed = false
+	velocity = Vector2.ZERO
+	push_vector = Vector2.ZERO
 
 
 func handle_gravity(delta):
@@ -30,24 +38,19 @@ func handle_gravity(delta):
 
 
 func handle_friction(delta):
+	if push_vector == Vector2.ZERO:
 		velocity.x = move_toward(velocity.x, 0, FRICTION*delta)
 
-
-func push_black(value,bidi):
-	if name == "black_block":
-		push(value)
-		if bidi:
-			GlobalSignalBus.push_white.emit(value,false)
-
-
-
-func push_white(value,bidi):
-	if name == "white_block":
-		push(value)
-		if bidi:
-			GlobalSignalBus.push_black.emit(value,false)
+func handle_acceleration(direction,delta):
+	if direction != Vector2.ZERO:
+		velocity.x = move_toward(velocity.x,direction.x * SPEED, ACCELERATION * delta)
 
 
 func push(value):
-	velocity.x = value
-	move_and_slide()
+	#velocity.x = value
+	#move_and_slide()
+	GlobalSignalBus.pushing.emit(value)
+
+func pushing(vector):
+	is_being_pushed = true
+	push_vector = vector

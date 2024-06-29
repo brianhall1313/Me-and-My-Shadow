@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var level:int
+
 @onready var collision_white = $floor_white/collision_white
 @onready var shape_white = $floor_white/collision_white/shape_white
 @onready var collision_black = $floor_black/collision_black
@@ -34,7 +36,10 @@ func _process(_delta):
 	if black_door.player_in_area and white_door.player_in_area:
 		if black_door.unlocked and white_door.unlocked:
 			if Input.is_action_just_released("interact"):
-				get_tree().quit()
+				Global.completed_level_log[self.level] = true
+				if self.level +1 < len(Global.open_level_log):
+					Global.open_level_log[self.level +1] = true 
+				get_tree().change_scene_to_file("res://level_select.tscn")
 
 
 func player_damaged():
