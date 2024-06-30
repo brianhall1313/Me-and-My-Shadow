@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 GlobalSignalBus="*res://GlobalSignalBus.gd"
 Global="*res://Global.gd"
+SaveAndLoad="*res://save_and_load.gd"
+AudioController="*res://audio_controller.tscn"
 
 [display]
 

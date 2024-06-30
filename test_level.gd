@@ -39,6 +39,8 @@ func _process(_delta):
 				Global.completed_level_log[self.level] = true
 				if self.level +1 < len(Global.open_level_log):
 					Global.open_level_log[self.level +1] = true 
+				AudioController.descent.play()
+				Global.save_stuff()
 				get_tree().change_scene_to_file("res://level_select.tscn")
 
 

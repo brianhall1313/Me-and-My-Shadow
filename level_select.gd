@@ -17,6 +17,7 @@ func _ready():
 		else:
 			level.icon = locked_button_icon
 			level.disabled = true
+	$"Control/VBoxContainer/level_grid/0".grab_focus()
 
 
 func _on_back_button_up():

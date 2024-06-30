@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1njf3dqg7467"]
+[gd_scene load_steps=14 format=3 uid="uid://b1njf3dqg7467"]
 
 [ext_resource type="Script" path="res://test_level.gd" id="1_y8g26"]
 [ext_resource type="PackedScene" uid="uid://bwpuy0ynb7hrt" path="res://shadow.tscn" id="2_0vjse"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://biqrfuoenibp4" path="res://black_key.tscn" id="10_ahq14"]
 [ext_resource type="PackedScene" uid="uid://cbx6ojddy1845" path="res://white_block.tscn" id="11_0j8jf"]
 [ext_resource type="PackedScene" uid="uid://c0m5k7nvidl2n" path="res://black_block.tscn" id="12_sa63k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fq2y6"]
+size = Vector2(16, 96)
 
 [node name="test_level" type="Node2D"]
 script = ExtResource("1_y8g26")
@@ -63,10 +66,10 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(40, 208)
 
 [node name="black_spike" parent="." instance=ExtResource("7_su2ss")]
-position = Vector2(303, 231)
+position = Vector2(16, 312)
 
 [node name="white_spike" parent="." instance=ExtResource("8_rops7")]
-position = Vector2(310, 81)
+position = Vector2(240, 24)
 
 [node name="white_key" parent="." instance=ExtResource("9_5debe")]
 position = Vector2(56, 96)
@@ -79,3 +82,14 @@ position = Vector2(101, 127)
 
 [node name="black_block" parent="." instance=ExtResource("12_sa63k")]
 position = Vector2(156, 193)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(256, 48)
+shape = SubResource("RectangleShape2D_fq2y6")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = 248.0
+offset_right = 264.0
+offset_bottom = 96.0
