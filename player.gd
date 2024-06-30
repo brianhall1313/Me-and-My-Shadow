@@ -1,11 +1,16 @@
 extends CharacterBody2D
 
 @onready var coyote_timer = $coyote_time
+@onready var wall_jump_time = $wall_jump_time
+@onready var animated_sprite = $animated_sprite
+
+
 
 @export var movement_data: PlayerMovementData
 var sprite_height:float = 16
 var is_jumping:bool = false
 var is_falling:bool = false
+var wall_jump_available:bool = false
 var floor_offset:float = sprite_height/2
 var air_jumps:bool = true
 
@@ -16,6 +21,7 @@ const PUSH_FORCE = 20
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
+	animated_sprite.play("idle")
 	if name == "shadow":
 		gravity *= -1
 		
@@ -38,6 +44,8 @@ func _physics_process(delta):
 	handle_animation(direction)
 	var was_on_floor = is_on_floor()
 	move_and_slide()
+	wall_jump_available = is_on_wall_only()
+	if wall_jump_available: wall_jump_time.start()
 	if was_on_floor and not is_on_floor() and not is_jumping:
 		is_falling = true
 		coyote_timer.start()
@@ -53,7 +61,7 @@ func handle_wall_jump():
 	if not is_on_wall():return
 	var wall_normal = get_wall_normal()
 	#wall normal points away from the wall,this is the direction you want to go
-	if is_on_wall_only():
+	if is_on_wall_only() or wall_jump_available:
 		if Input.is_action_just_pressed("move_left") and  wall_normal == Vector2.LEFT:
 			velocity.x = wall_normal.x * movement_data.speed
 			velocity.y = movement_data.jump_velocity
@@ -142,5 +150,12 @@ func landing_animation():
 
 
 func handle_animation(direction):
-	if direction:
-		pass
+	if not is_on_floor():
+		animated_sprite.play("jump")
+		animated_sprite.flip_h = direction<0
+		return
+	if direction == 0:
+		animated_sprite.play("idle")
+	else:
+		animated_sprite.play("run")
+		animated_sprite.flip_h = direction<0

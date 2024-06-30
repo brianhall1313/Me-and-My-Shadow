@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://c8bqup8lvywmi" path="res://se_landing.wav" id="7_hpqan"]
 
 [node name="Audio_Controller" type="Node"]
+process_mode = 3
 script = ExtResource("1_yf6r1")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
@@ -26,6 +27,7 @@ stream = ExtResource("4_ce0ce")
 stream = ExtResource("5_udlvg")
 
 [node name="Descent" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("6_1rm58")
 
 [node name="Landing" type="AudioStreamPlayer" parent="."]

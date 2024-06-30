@@ -30,6 +30,7 @@ offset_bottom = 320.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="black" type="ColorRect" parent="Control/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -114,7 +115,7 @@ polygon = PackedVector2Array(24, 160, 0, 160, 0, 320, 320, 320, 320, 160, 232, 1
 visible = false
 layout_mode = 0
 offset_right = 320.0
-offset_bottom = 319.0
+offset_bottom = 320.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4fwpv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/how to play"]
@@ -131,6 +132,9 @@ layout_mode = 2
 text = "Movement: Arrow Keys, WASD
 
 Jump: Space Bar
+jump in the air for a double jump
+Wall jump: 
+pressing the direction away from the wall
 
 Interact: Hold Up(a button on controllers)
 
@@ -144,8 +148,11 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
-theme_override_colors/font_color = Color(0.992157, 1, 0, 1)
 text = "Back"
+
+[node name="Control" type="Control" parent="Control/how to play/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="credits" type="PanelContainer" parent="Control"]
 visible = false
@@ -187,8 +194,11 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
-theme_override_colors/font_color = Color(0, 0.972549, 0, 1)
 text = "Back"
+
+[node name="Control" type="Control" parent="Control/credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [connection signal="button_up" from="Control/VBoxContainer/VBoxContainer/New Game" to="." method="_on_new_game_button_up"]
 [connection signal="button_up" from="Control/VBoxContainer/VBoxContainer/Continue" to="." method="_on_continue_button_up"]

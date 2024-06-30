@@ -8,6 +8,7 @@ const FRICTION = 2000
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity_multiplier = 10
 
 var is_being_pushed:bool = false
 var push_vector:Vector2 = Vector2.ZERO
@@ -34,7 +35,7 @@ func _physics_process(delta):
 
 func handle_gravity(delta):
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += gravity * delta * gravity_multiplier
 
 
 func handle_friction(delta):

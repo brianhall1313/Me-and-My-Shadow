@@ -88,6 +88,15 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
+[node name="5" type="Button" parent="Control/VBoxContainer/level_grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "5"
+icon = ExtResource("3_dbmcj")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
 [node name="back" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -98,4 +107,5 @@ text = "Back"
 [connection signal="button_up" from="Control/VBoxContainer/level_grid/2" to="." method="_on_2_button_up"]
 [connection signal="button_up" from="Control/VBoxContainer/level_grid/3" to="." method="_on_3_button_up"]
 [connection signal="button_up" from="Control/VBoxContainer/level_grid/4" to="." method="_on_4_button_up"]
+[connection signal="button_up" from="Control/VBoxContainer/level_grid/5" to="." method="_on_5_button_up"]
 [connection signal="button_up" from="Control/VBoxContainer/back" to="." method="_on_back_button_up"]

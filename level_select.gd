@@ -17,29 +17,64 @@ func _ready():
 		else:
 			level.icon = locked_button_icon
 			level.disabled = true
+	var new = Global.wipe.instantiate()
+	add_child(new)
+	new.wipe_left()
 	$"Control/VBoxContainer/level_grid/0".grab_focus()
 
 
-func _on_back_button_up():
+func _process(_delta):
+	if Input.is_action_just_pressed("back"):
+		exit()
+
+func transition_to_level():
+	var new = Global.wipe.instantiate()
+	add_child(new)
+	new.wipe_right()
+
+func exit():
+	var new = Global.wipe.instantiate()
+	add_child(new)
+	new.wipe_out()
+	await GlobalSignalBus.transition_done
 	get_tree().change_scene_to_file("res://main.tscn")
+
+func _on_back_button_up():
+	exit()
 
 
 func _on_0_button_up():
 	Global.level = 0
+	transition_to_level()
+	await GlobalSignalBus.transition_done
 	get_tree().change_scene_to_file("res://level_0.tscn")
 	
 func _on_1_button_up():
 	Global.level = 1
+	transition_to_level()
+	await GlobalSignalBus.transition_done
 	get_tree().change_scene_to_file("res://level_1.tscn")
 	
 func _on_2_button_up():
 	Global.level = 2
+	transition_to_level()
+	await GlobalSignalBus.transition_done
 	get_tree().change_scene_to_file("res://level_2.tscn")
 	
 func _on_3_button_up():
 	Global.level = 3
+	transition_to_level()
+	await GlobalSignalBus.transition_done
 	get_tree().change_scene_to_file("res://level_3.tscn")
 	
 func _on_4_button_up():
 	Global.level = 4
-	get_tree().change_scene_to_file("res://level_4.tscn")
+	transition_to_level()
+	await GlobalSignalBus.transition_done
+	get_tree().change_scene_to_file("res://level_4.tscn")	
+
+func _on_5_button_up():
+	Global.level = 5
+	transition_to_level()
+	await GlobalSignalBus.transition_done
+	get_tree().change_scene_to_file("res://level_5.tscn")
