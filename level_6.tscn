@@ -1,0 +1,333 @@
+[gd_scene load_steps=18 format=3 uid="uid://bw2jnjhbmyr2"]
+
+[ext_resource type="Script" path="res://test_level.gd" id="1_26xwy"]
+[ext_resource type="PackedScene" uid="uid://u8fiysfj1plv" path="res://black_door.tscn" id="2_7n2vn"]
+[ext_resource type="PackedScene" uid="uid://c00jo8qmg4n57" path="res://white_door.tscn" id="3_o7d5r"]
+[ext_resource type="PackedScene" uid="uid://bwpuy0ynb7hrt" path="res://shadow.tscn" id="4_b54dy"]
+[ext_resource type="PackedScene" uid="uid://blhemidxahef0" path="res://player.tscn" id="5_h3g3t"]
+[ext_resource type="PackedScene" uid="uid://ccqagh7v6o6d3" path="res://black_spike.tscn" id="6_6gqma"]
+[ext_resource type="PackedScene" uid="uid://c816lbg3fc42k" path="res://white_spike.tscn" id="7_40wer"]
+[ext_resource type="PackedScene" uid="uid://c5vs0rnqra8n2" path="res://white_key.tscn" id="8_0f4hg"]
+[ext_resource type="PackedScene" uid="uid://biqrfuoenibp4" path="res://black_key.tscn" id="9_d2uhi"]
+[ext_resource type="PackedScene" uid="uid://cbx6ojddy1845" path="res://white_block.tscn" id="10_88cbe"]
+[ext_resource type="Theme" uid="uid://d334f2xsycvqg" path="res://basic_theme.tres" id="10_ccht3"]
+[ext_resource type="PackedScene" uid="uid://c0m5k7nvidl2n" path="res://black_block.tscn" id="11_7ifwb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fq2y6"]
+size = Vector2(48, 96)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bw00t"]
+bg_color = Color(0.103744, 0.103744, 0.103743, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwsnt"]
+size = Vector2(24, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25skg"]
+size = Vector2(48, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfid6"]
+size = Vector2(24, 104)
+
+[node name="level_6" type="Node2D"]
+script = ExtResource("1_26xwy")
+level = 6
+
+[node name="bottom_background" type="ColorRect" parent="."]
+offset_top = 160.0
+offset_right = 320.0
+offset_bottom = 320.0
+
+[node name="top_background" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 160.0
+color = Color(0, 0, 0, 1)
+
+[node name="black_door" parent="." instance=ExtResource("2_7n2vn")]
+position = Vector2(304, 296)
+
+[node name="white_door" parent="." instance=ExtResource("3_o7d5r")]
+position = Vector2(304, 40)
+
+[node name="floor_white" type="StaticBody2D" parent="."]
+
+[node name="collision_white" type="CollisionPolygon2D" parent="floor_white"]
+position = Vector2(0, 64)
+polygon = PackedVector2Array(0, 96, 0, -176, 8, -176, 8, 80, 312, 80, 312, -176, 320, -176, 320, 96)
+
+[node name="shape_white" type="Polygon2D" parent="floor_white/collision_white"]
+
+[node name="floor_black" type="StaticBody2D" parent="."]
+
+[node name="collision_black" type="CollisionPolygon2D" parent="floor_black"]
+position = Vector2(0, 80)
+polygon = PackedVector2Array(0, 80, 0, 336, 8, 336, 8, 96, 312, 96, 312, 336, 320, 336, 320, 240, 320, 80)
+
+[node name="shape_black" type="Polygon2D" parent="floor_black/collision_black"]
+color = Color(0, 0, 0, 1)
+
+[node name="shadow" parent="." instance=ExtResource("4_b54dy")]
+position = Vector2(16, 184)
+
+[node name="player" parent="." instance=ExtResource("5_h3g3t")]
+position = Vector2(16, 136)
+
+[node name="black_spike2" parent="." instance=ExtResource("6_6gqma")]
+position = Vector2(76, 187)
+
+[node name="black_spike3" parent="." instance=ExtResource("6_6gqma")]
+position = Vector2(116, 187)
+
+[node name="white_spike2" parent="." instance=ExtResource("7_40wer")]
+position = Vector2(164, -3)
+rotation = 3.14159
+
+[node name="white_spike4" parent="." instance=ExtResource("7_40wer")]
+position = Vector2(172, -3)
+rotation = 3.14159
+
+[node name="white_spike5" parent="." instance=ExtResource("7_40wer")]
+position = Vector2(180, -3)
+rotation = 3.14159
+
+[node name="white_spike6" parent="." instance=ExtResource("7_40wer")]
+position = Vector2(188, -3)
+rotation = 3.14159
+
+[node name="white_spike3" parent="." instance=ExtResource("7_40wer")]
+position = Vector2(196, -3)
+rotation = 3.14159
+
+[node name="white_key" parent="." instance=ExtResource("8_0f4hg")]
+position = Vector2(179, 32)
+
+[node name="black_key" parent="." instance=ExtResource("9_d2uhi")]
+position = Vector2(97, 222)
+
+[node name="white_block" parent="." instance=ExtResource("10_88cbe")]
+position = Vector2(280, 32)
+
+[node name="black_block" parent="." instance=ExtResource("11_7ifwb")]
+position = Vector2(280, 304)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(48, 48)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(240, 48)
+shape = SubResource("RectangleShape2D_fq2y6")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = 216.0
+offset_right = 264.0
+offset_bottom = 96.0
+
+[node name="pause_menu" type="PanelContainer" parent="."]
+process_mode = 3
+visible = false
+top_level = true
+offset_right = 320.0
+offset_bottom = 328.0
+theme = ExtResource("10_ccht3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_bw00t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause_menu"]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="pause_menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+
+[node name="Label" type="Label" parent="pause_menu/VBoxContainer"]
+layout_mode = 2
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="pause_menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause_menu/VBoxContainer"]
+layout_mode = 2
+
+[node name="continue" type="Button" parent="pause_menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "Back to Game"
+
+[node name="quit_to_main" type="Button" parent="pause_menu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "Back to Level Selection"
+
+[node name="Control2" type="Control" parent="pause_menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(8, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(204, 48)
+shape = SubResource("RectangleShape2D_cwsnt")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+offset_left = 192.0
+offset_right = 216.0
+offset_bottom = 96.0
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(-144, 48)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(204, 48)
+shape = SubResource("RectangleShape2D_cwsnt")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D6"]
+offset_left = 192.0
+offset_right = 216.0
+offset_bottom = 96.0
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+position = Vector2(-56, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2(204, 48)
+shape = SubResource("RectangleShape2D_cwsnt")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D9"]
+offset_left = 192.0
+offset_right = 216.0
+offset_bottom = 96.0
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2(-144, 176)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(204, 48)
+shape = SubResource("RectangleShape2D_cwsnt")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D7"]
+offset_left = 192.0
+offset_right = 216.0
+offset_bottom = 96.0
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="."]
+position = Vector2(-72, 176)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
+position = Vector2(204, 48)
+shape = SubResource("RectangleShape2D_cwsnt")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D10"]
+offset_left = 192.0
+offset_right = 216.0
+offset_bottom = 96.0
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(192, 208)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(96, 24)
+shape = SubResource("RectangleShape2D_25skg")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D3"]
+offset_left = 72.0
+offset_top = -32.0
+offset_right = 120.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(184, 280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(28, 4)
+shape = SubResource("RectangleShape2D_lfid6")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D4"]
+offset_left = 16.0
+offset_top = -48.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(248, 312)
+rotation = 1.5708
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(28, -12)
+shape = SubResource("RectangleShape2D_lfid6")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D5"]
+offset_left = 16.0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+position = Vector2(248, -48)
+rotation = 1.5708
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2(28, -12)
+shape = SubResource("RectangleShape2D_lfid6")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D8"]
+offset_left = 16.0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="."]
+position = Vector2(144, -40)
+rotation = 1.5708
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
+position = Vector2(28, -12)
+shape = SubResource("RectangleShape2D_lfid6")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D11"]
+offset_left = 16.0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="."]
+position = Vector2(48, -40)
+rotation = 1.5708
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12"]
+position = Vector2(28, -12)
+shape = SubResource("RectangleShape2D_lfid6")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D12"]
+offset_left = 16.0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="button_up" from="pause_menu/VBoxContainer/VBoxContainer/continue" to="." method="close_pause"]
+[connection signal="button_up" from="pause_menu/VBoxContainer/VBoxContainer/quit_to_main" to="." method="_on_quit_to_main_button_up"]

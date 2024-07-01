@@ -78,3 +78,32 @@ func _on_5_button_up():
 	transition_to_level()
 	await GlobalSignalBus.transition_done
 	get_tree().change_scene_to_file("res://level_5.tscn")
+
+
+func _on_6_button_up():
+	Global.level = 6
+	transition_to_level()
+	await GlobalSignalBus.transition_done
+	get_tree().change_scene_to_file("res://level_6.tscn")
+
+
+func _on_7_button_up():
+	Global.level = 7
+	transition_to_level()
+	await GlobalSignalBus.transition_done
+	get_tree().change_scene_to_file("res://level_7.tscn")
+
+
+func _on_8_button_up():
+	Global.level = 8
+	transition_to_level()
+	await GlobalSignalBus.transition_done
+	get_tree().change_scene_to_file("res://level_8.tscn")
+
+
+
+func _on_9_button_up():
+	Global.level = 9
+	transition_to_level()
+	await GlobalSignalBus.transition_done
+	get_tree().change_scene_to_file("res://level_9.tscn")

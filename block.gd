@@ -25,8 +25,6 @@ func _physics_process(delta):
 	handle_gravity(delta)
 	handle_friction(delta)
 	handle_acceleration(push_vector,delta)
-	if is_being_pushed:
-		print(velocity, " " , name , " other data: ", delta)
 	move_and_slide()
 	is_being_pushed = false
 	velocity = Vector2.ZERO
@@ -48,8 +46,6 @@ func handle_acceleration(direction,delta):
 
 
 func push(value):
-	#velocity.x = value
-	#move_and_slide()
 	GlobalSignalBus.pushing.emit(value)
 
 func pushing(vector):

@@ -97,6 +97,42 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
+[node name="6" type="Button" parent="Control/VBoxContainer/level_grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "6"
+icon = ExtResource("3_dbmcj")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="7" type="Button" parent="Control/VBoxContainer/level_grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "7"
+icon = ExtResource("3_dbmcj")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="8" type="Button" parent="Control/VBoxContainer/level_grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "8"
+icon = ExtResource("3_dbmcj")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="9" type="Button" parent="Control/VBoxContainer/level_grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "9"
+icon = ExtResource("3_dbmcj")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
 [node name="back" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -108,4 +144,8 @@ text = "Back"
 [connection signal="button_up" from="Control/VBoxContainer/level_grid/3" to="." method="_on_3_button_up"]
 [connection signal="button_up" from="Control/VBoxContainer/level_grid/4" to="." method="_on_4_button_up"]
 [connection signal="button_up" from="Control/VBoxContainer/level_grid/5" to="." method="_on_5_button_up"]
+[connection signal="button_up" from="Control/VBoxContainer/level_grid/6" to="." method="_on_6_button_up"]
+[connection signal="button_up" from="Control/VBoxContainer/level_grid/7" to="." method="_on_7_button_up"]
+[connection signal="button_up" from="Control/VBoxContainer/level_grid/8" to="." method="_on_8_button_up"]
+[connection signal="button_up" from="Control/VBoxContainer/level_grid/9" to="." method="_on_9_button_up"]
 [connection signal="button_up" from="Control/VBoxContainer/back" to="." method="_on_back_button_up"]
