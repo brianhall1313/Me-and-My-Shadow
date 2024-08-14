@@ -2,10 +2,7 @@ extends Node2D
 
 @export var level:int
 
-@onready var collision_white = $floor_white/collision_white
-@onready var shape_white = $floor_white/collision_white/shape_white
-@onready var collision_black = $floor_black/collision_black
-@onready var shape_black = $floor_black/collision_black/shape_black
+
 @onready var black_door = $black_door
 @onready var white_door = $white_door
 @onready var bottom_background = $bottom_background
@@ -17,8 +14,6 @@ var is_paused:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	shape_white.polygon = collision_white.polygon
-	shape_black.polygon = collision_black.polygon
 	connect_to_global_signal_bus()
 	top_background.show()
 	bottom_background.show()
