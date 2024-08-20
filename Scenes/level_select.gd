@@ -53,7 +53,7 @@ func _on_1_button_up():
 	Global.level = 1
 	transition_to_level()
 	await GlobalSignalBus.transition_done
-	get_tree().change_scene_to_file("res://level_1.tscn")
+	Global.load_level()
 	
 func _on_2_button_up():
 	Global.level = 2
