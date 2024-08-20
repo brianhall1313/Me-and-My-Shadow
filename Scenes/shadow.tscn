@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://bwpuy0ynb7hrt"]
+
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_4ugkp"]
+[ext_resource type="Resource" uid="uid://dafo1q538id3y" path="res://Resources/ShadowMovementData.tres" id="2_num86"]
+[ext_resource type="Texture2D" uid="uid://dgybu8k86msk5" path="res://Textures/shadow_character.png" id="3_vvmeb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25lel"]
+atlas = ExtResource("3_vvmeb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeos0"]
+atlas = ExtResource("3_vvmeb")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0dkt"]
+atlas = ExtResource("3_vvmeb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uvn4"]
+atlas = ExtResource("3_vvmeb")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrc7y"]
+atlas = ExtResource("3_vvmeb")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6cuk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25lel")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeos0")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0dkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uvn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrc7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uvn4")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyaoo"]
+size = Vector2(6, 14)
+
+[node name="shadow" type="CharacterBody2D"]
+collision_layer = 46
+collision_mask = 47
+up_direction = Vector2(0, 1)
+floor_constant_speed = true
+floor_snap_length = 3.0
+script = ExtResource("1_4ugkp")
+movement_data = ExtResource("2_num86")
+
+[node name="animated_sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6cuk8")
+animation = &"run"
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_tyaoo")
+
+[node name="coyote_time" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[node name="wall_jump_time" type="Timer" parent="."]
+wait_time = 0.08
+one_shot = true

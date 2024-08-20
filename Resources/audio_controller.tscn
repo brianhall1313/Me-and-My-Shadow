@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://db1bp6vhah1rx"]
+
+[ext_resource type="Script" path="res://Resources/Audio_Controller.gd" id="1_yf6r1"]
+[ext_resource type="AudioStream" uid="uid://dqbav8257mkos" path="res://Audio/Bleeping Demo.mp3" id="2_gtmab"]
+[ext_resource type="AudioStream" uid="uid://bwfcemui0lnrc" path="res://Audio/sejump.wav" id="3_rc765"]
+[ext_resource type="AudioStream" uid="uid://dbhkb0nhddesl" path="res://Audio/sedamage2.wav" id="4_ce0ce"]
+[ext_resource type="AudioStream" uid="uid://cjko072spdlvt" path="res://Audio/seKey_pickup.wav" id="5_udlvg"]
+[ext_resource type="AudioStream" uid="uid://dgr4j41fqfv1p" path="res://Audio/sedescent.wav" id="6_1rm58"]
+[ext_resource type="AudioStream" uid="uid://c8bqup8lvywmi" path="res://Audio/se_landing.wav" id="7_hpqan"]
+
+[node name="Audio_Controller" type="Node"]
+process_mode = 3
+script = ExtResource("1_yf6r1")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_gtmab")
+volume_db = -12.0
+autoplay = true
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rc765")
+
+[node name="Damage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ce0ce")
+
+[node name="Key_Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_udlvg")
+
+[node name="Descent" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("6_1rm58")
+
+[node name="Landing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_hpqan")
