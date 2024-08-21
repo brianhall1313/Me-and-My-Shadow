@@ -97,5 +97,5 @@ func close_pause():
 
 
 func _on_quit_to_main_button_up():
-	get_tree().change_scene_to_file("res://level_select.tscn")
+	get_tree().change_scene_to_file("res://Scenes/level_select.tscn")
 	

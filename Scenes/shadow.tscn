@@ -74,7 +74,7 @@ movement_data = ExtResource("2_num86")
 
 [node name="animated_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6cuk8")
-animation = &"run"
+animation = &"idle"
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

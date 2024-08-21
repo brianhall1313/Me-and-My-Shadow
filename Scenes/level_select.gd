@@ -37,7 +37,7 @@ func exit():
 	add_child(new)
 	new.wipe_out()
 	await GlobalSignalBus.transition_done
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 func _on_back_button_up():
 	exit()
