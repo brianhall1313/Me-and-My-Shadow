@@ -39,70 +39,62 @@ func exit():
 	await GlobalSignalBus.transition_done
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
+
+func load_level():
+	transition_to_level()
+	await GlobalSignalBus.transition_done
+	Global.load_level()
+
+
 func _on_back_button_up():
 	exit()
 
 
 func _on_0_button_up():
 	Global.level = 0
-	transition_to_level()
-	await GlobalSignalBus.transition_done
-	Global.load_level()
+	load_level()
 	
 func _on_1_button_up():
 	Global.level = 1
-	transition_to_level()
-	await GlobalSignalBus.transition_done
-	Global.load_level()
+	load_level()
 	
 func _on_2_button_up():
 	Global.level = 2
-	transition_to_level()
-	await GlobalSignalBus.transition_done
-	Global.load_level()
+	load_level()
 	
 func _on_3_button_up():
 	Global.level = 3
-	transition_to_level()
-	await GlobalSignalBus.transition_done
-	Global.load_level()
+	load_level()
 	
 func _on_4_button_up():
 	Global.level = 4
-	transition_to_level()
-	await GlobalSignalBus.transition_done
-	Global.load_level()
+	load_level()
 
 func _on_5_button_up():
 	Global.level = 5
-	transition_to_level()
-	await GlobalSignalBus.transition_done
-	Global.load_level()
+	load_level()
 
 func _on_6_button_up():
 	Global.level = 6
-	transition_to_level()
-	await GlobalSignalBus.transition_done
-	Global.load_level()
+	load_level()
 
 
 func _on_7_button_up():
 	Global.level = 7
-	transition_to_level()
-	await GlobalSignalBus.transition_done
-	Global.load_level()
+	load_level()
 
 
 func _on_8_button_up():
 	Global.level = 8
-	transition_to_level()
-	await GlobalSignalBus.transition_done
-	Global.load_level()
+	load_level()
 
 
 
 func _on_9_button_up():
 	Global.level = 9
-	transition_to_level()
-	await GlobalSignalBus.transition_done
-	Global.load_level()
+	load_level()
+
+
+func _on_10_button_up() -> void:
+	Global.level = 10
+	load_level()

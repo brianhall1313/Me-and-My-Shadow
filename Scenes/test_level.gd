@@ -15,6 +15,7 @@ var is_paused:bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	connect_to_global_signal_bus()
+	level = Global.level
 	top_background.show()
 	bottom_background.show()
 	var new = Global.wipe.instantiate()
