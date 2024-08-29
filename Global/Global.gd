@@ -46,6 +46,7 @@ func load_stuff():
 		open_level_log=save_data["open"].duplicate()
 	else:
 		load_default()
+	set_level()
 
 func load_default():
 	completed_level_log=default_completed_level_log.duplicate()
@@ -62,3 +63,13 @@ func unpause():
 
 func load_level():
 	get_tree().change_scene_to_file(levels[level])
+
+
+func set_level():
+	for i in range(len(levels)):
+		if not open_level_log[i]:
+			#-1 since the first false will be the next unavailable tile
+			level = i-1
+			print("level selected = ",str(i))
+			return
+	level = 0
