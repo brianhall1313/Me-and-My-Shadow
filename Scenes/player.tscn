@@ -87,3 +87,9 @@ one_shot = true
 [node name="wall_jump_time" type="Timer" parent="."]
 wait_time = 0.08
 one_shot = true
+
+[node name="wall jump allowed" type="ColorRect" parent="."]
+offset_left = -4.0
+offset_top = -18.0
+offset_right = 4.0
+offset_bottom = -11.0
