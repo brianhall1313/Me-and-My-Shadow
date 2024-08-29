@@ -45,7 +45,8 @@ func _physics_process(delta):
 	var was_on_floor = is_on_floor()
 	move_and_slide()
 	wall_jump_available = is_on_wall_only()
-	if wall_jump_available: wall_jump_time.start()
+	if wall_jump_available: 
+		wall_jump_time.start()
 	if was_on_floor and not is_on_floor() and not is_jumping:
 		is_falling = true
 		coyote_timer.start()
@@ -58,10 +59,15 @@ func handle_gravity(delta):
 
 
 func handle_wall_jump():
-	if not is_on_wall():return
+	if not is_on_wall():
+		if name == "player":
+			$"wall jump allowed".color = Color("red")
+		return
 	var wall_normal = get_wall_normal()
 	#wall normal points away from the wall,this is the direction you want to go
 	if is_on_wall_only() or wall_jump_available:
+		if name == "player":
+			$"wall jump allowed".color = Color("green")
 		if Input.is_action_just_pressed("move_left") and  wall_normal == Vector2.LEFT:
 			velocity.x = wall_normal.x * movement_data.speed
 			velocity.y = movement_data.jump_velocity
@@ -79,7 +85,7 @@ func handle_jump():
 			is_jumping = true
 			velocity.y = movement_data.jump_velocity
 			AudioController.jump.play()
-	if not is_on_floor():
+	elif not is_on_floor():
 		if Input.is_action_just_pressed("jump") and (is_falling or is_jumping):
 			if air_jumps:
 				air_jumps = false
