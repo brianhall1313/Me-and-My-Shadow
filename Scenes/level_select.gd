@@ -20,7 +20,9 @@ func _ready():
 	var new = Global.wipe.instantiate()
 	add_child(new)
 	new.wipe_left()
-	$"Control/VBoxContainer/level_grid/0".grab_focus()
+	Global.set_level()
+	var child = level_grid.get_children()[Global.level]
+	child.grab_focus()
 
 
 func _process(_delta):
@@ -40,57 +42,57 @@ func exit():
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 
-func load_level():
+func load_level() -> void:
 	transition_to_level()
 	await GlobalSignalBus.transition_done
 	Global.load_level()
 
 
-func _on_back_button_up():
+func _on_back_button_up() -> void:
 	exit()
 
 
-func _on_0_button_up():
+func _on_0_button_up() -> void:
 	Global.level = 0
 	load_level()
 	
-func _on_1_button_up():
+func _on_1_button_up() -> void:
 	Global.level = 1
 	load_level()
 	
-func _on_2_button_up():
+func _on_2_button_up() -> void:
 	Global.level = 2
 	load_level()
 	
-func _on_3_button_up():
+func _on_3_button_up() -> void:
 	Global.level = 3
 	load_level()
 	
-func _on_4_button_up():
+func _on_4_button_up() -> void:
 	Global.level = 4
 	load_level()
 
-func _on_5_button_up():
+func _on_5_button_up() -> void:
 	Global.level = 5
 	load_level()
 
-func _on_6_button_up():
+func _on_6_button_up() -> void:
 	Global.level = 6
 	load_level()
 
 
-func _on_7_button_up():
+func _on_7_button_up() -> void:
 	Global.level = 7
 	load_level()
 
 
-func _on_8_button_up():
+func _on_8_button_up() -> void:
 	Global.level = 8
 	load_level()
 
 
 
-func _on_9_button_up():
+func _on_9_button_up() -> void:
 	Global.level = 9
 	load_level()
 
