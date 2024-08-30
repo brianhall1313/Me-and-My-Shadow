@@ -113,6 +113,7 @@ polygon = PackedVector2Array(24, 160, 0, 160, 0, 320, 320, 320, 320, 160, 232, 1
 
 [node name="how to play" type="PanelContainer" parent="Control"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 320.0
@@ -156,6 +157,7 @@ size_flags_vertical = 3
 
 [node name="credits" type="PanelContainer" parent="Control"]
 visible = false
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 320.0
@@ -175,7 +177,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Made for Summer Jam 2024
 Theme: Opposites
-
+Engine: Godot 4
 Designer/Programmer
 Brian Hall
 https://pr0t34n.itch.io/

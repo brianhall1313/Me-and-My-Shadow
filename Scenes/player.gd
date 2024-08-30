@@ -34,8 +34,8 @@ func _physics_process(delta):
 		landing_animation()
 	handle_gravity(delta)
 	var direction = Input.get_axis("move_left", "move_right")
-	handle_jump()
 	handle_wall_jump()
+	handle_jump()
 	handle_acceleration(direction,delta)
 	handle_air_acceleration(direction,delta)
 	handle_friction(direction,delta)
@@ -62,7 +62,7 @@ func handle_wall_jump():
 	var wall_normal = get_wall_normal()
 	#wall normal points away from the wall,this is the direction you want to go
 	if is_on_wall_only() or wall_jump_available:
-		if Input.is_action_just_pressed("move_left") and  wall_normal == Vector2.LEFT:
+		if Input.is_action_just_pressed("move_left") and wall_normal == Vector2.LEFT:
 			velocity.x = wall_normal.x * movement_data.speed
 			velocity.y = movement_data.jump_velocity
 			is_jumping = true
@@ -70,7 +70,6 @@ func handle_wall_jump():
 			velocity.x = wall_normal.x * movement_data.speed
 			velocity.y = movement_data.jump_velocity
 			is_jumping = true
-	
 
 
 func handle_jump():
@@ -79,11 +78,13 @@ func handle_jump():
 			is_jumping = true
 			velocity.y = movement_data.jump_velocity
 			AudioController.jump.play()
+			return
 	elif not is_on_floor():
-		if Input.is_action_just_pressed("jump") and (is_falling or is_jumping):
+		if Input.is_action_just_pressed("jump"):
 			if air_jumps:
 				air_jumps = false
 				velocity.y = movement_data.air_jump_velocity
+				return
 		#shorten jump
 		if Input.is_action_just_released("jump"):
 			if name == "shadow" and velocity.y > movement_data.jump_velocity/2:
