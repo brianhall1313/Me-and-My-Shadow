@@ -54,23 +54,6 @@ position = Vector2(304, 184)
 [node name="white_door" parent="." instance=ExtResource("3_6nvjp")]
 position = Vector2(304, 136)
 
-[node name="floor_white" type="StaticBody2D" parent="."]
-
-[node name="collision_white" type="CollisionPolygon2D" parent="floor_white"]
-position = Vector2(0, 64)
-polygon = PackedVector2Array(0, 96, 0, -64, 8, -64, 8, 80, 48, 80, 48, 8, 80, 8, 80, 80, 312, 80, 312, -64, 320, -64, 320, 96, 0, 96)
-
-[node name="shape_white" type="Polygon2D" parent="floor_white/collision_white"]
-
-[node name="floor_black" type="StaticBody2D" parent="."]
-
-[node name="collision_black" type="CollisionPolygon2D" parent="floor_black"]
-position = Vector2(0, 80)
-polygon = PackedVector2Array(0, 80, 0, 240, 8, 240, 8, 96, 312, 96, 312, 240, 320, 240, 320, 240, 320, 80)
-
-[node name="shape_black" type="Polygon2D" parent="floor_black/collision_black"]
-color = Color(0, 0, 0, 1)
-
 [node name="shadow" parent="." instance=ExtResource("4_tmdyl")]
 position = Vector2(16, 184)
 

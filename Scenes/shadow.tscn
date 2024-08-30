@@ -69,6 +69,7 @@ collision_mask = 47
 up_direction = Vector2(0, 1)
 floor_constant_speed = true
 floor_snap_length = 3.0
+safe_margin = 0.1
 script = ExtResource("1_4ugkp")
 movement_data = ExtResource("2_num86")
 
@@ -86,5 +87,5 @@ wait_time = 0.15
 one_shot = true
 
 [node name="wall_jump_time" type="Timer" parent="."]
-wait_time = 0.08
+wait_time = 0.05
 one_shot = true
