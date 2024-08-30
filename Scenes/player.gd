@@ -59,15 +59,9 @@ func handle_gravity(delta):
 
 
 func handle_wall_jump():
-	if not is_on_wall():
-		if name == "player":
-			$"wall jump allowed".color = Color("red")
-		return
 	var wall_normal = get_wall_normal()
 	#wall normal points away from the wall,this is the direction you want to go
 	if is_on_wall_only() or wall_jump_available:
-		if name == "player":
-			$"wall jump allowed".color = Color("green")
 		if Input.is_action_just_pressed("move_left") and  wall_normal == Vector2.LEFT:
 			velocity.x = wall_normal.x * movement_data.speed
 			velocity.y = movement_data.jump_velocity
@@ -90,7 +84,7 @@ func handle_jump():
 			if air_jumps:
 				air_jumps = false
 				velocity.y = movement_data.air_jump_velocity
-		
+		#shorten jump
 		if Input.is_action_just_released("jump"):
 			if name == "shadow" and velocity.y > movement_data.jump_velocity/2:
 				velocity.y = movement_data.jump_velocity/2
