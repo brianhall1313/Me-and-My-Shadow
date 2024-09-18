@@ -28,7 +28,7 @@ var completed_level_log:Array = [false,false,false,false,false,false,false,false
 var open_level_log:Array = [true,false,false,false,false,false,false,false,false,false,false]
 var level:int = 0
 
-var debug:bool = true
+var debug:bool = false
 
 
 func _ready():
