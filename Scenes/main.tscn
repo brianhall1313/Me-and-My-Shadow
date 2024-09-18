@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://wnq5ncsxhm3i"]
+[gd_scene load_steps=6 format=3 uid="uid://wnq5ncsxhm3i"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_pi1df"]
 [ext_resource type="Theme" uid="uid://d334f2xsycvqg" path="res://Resources/basic_theme.tres" id="2_4f0sp"]
+[ext_resource type="FontFile" uid="uid://cr321lsktxq0x" path="res://Resources/Tiny5-Regular.ttf" id="3_h84e2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yskj1"]
 bg_color = Color(1, 1, 1, 1)
@@ -156,7 +157,6 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="credits" type="PanelContainer" parent="Control"]
-visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 320.0
@@ -188,11 +188,19 @@ License http://creativecommons.org/licenses/by/4.0/
 Assets Made Using
 https://www.pixilart.com
 Chiptone(sound):
-https://sfbgames.itch.io/chiptone
-"
+https://sfbgames.itch.io/chiptone"
 horizontal_alignment = 1
 
+[node name="LinkButton" type="LinkButton" parent="Control/credits/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_h84e2")
+text = "Godot License"
+uri = "https://godotengine.org/license/"
+
 [node name="credits_back" type="Button" parent="Control/credits/VBoxContainer"]
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
