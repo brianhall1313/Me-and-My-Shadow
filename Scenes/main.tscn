@@ -157,6 +157,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="credits" type="PanelContainer" parent="Control"]
+visible = false
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 320.0
