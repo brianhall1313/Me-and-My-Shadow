@@ -9,6 +9,7 @@ const levels:Array = [
 	"res://Scenes/level_4.tscn",
 	"res://Scenes/level_5.tscn",
 	"res://Scenes/level_6.tscn",
+	"res://Scenes/level_hazardous_spring.tscn",
 	"res://Scenes/level_7.tscn",
 	"res://Scenes/level_8.tscn",
 	"res://Scenes/level_9.tscn",
@@ -22,13 +23,13 @@ const levels:Array = [
 var in_transition:bool = false
 
 
-var default_completed_level_log:Array= [false,false,false,false,false,false,false,false,false,false,false]
-var default_open_level_log:Array = [true,false,false,false,false,false,false,false,false,false,false]
-var completed_level_log:Array = [false,false,false,false,false,false,false,false,false,false,false]
-var open_level_log:Array = [true,false,false,false,false,false,false,false,false,false,false]
+var default_completed_level_log:Array= [false,false,false,false,false,false,false,false,false,false,false,false]
+var default_open_level_log:Array = [true,false,false,false,false,false,false,false,false,false,false,false]
+var completed_level_log:Array = [false,false,false,false,false,false,false,false,false,false,false,false]
+var open_level_log:Array = [true,false,false,false,false,false,false,false,false,false,false,false]
 var level:int = 0
 
-var debug:bool = false
+var debug:bool = true
 
 
 func _ready():

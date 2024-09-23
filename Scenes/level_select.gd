@@ -100,3 +100,8 @@ func _on_9_button_up() -> void:
 func _on_10_button_up() -> void:
 	Global.level = 10
 	load_level()
+
+
+func _on_11_button_up() -> void:
+	Global.level = 11
+	load_level()
