@@ -79,9 +79,6 @@ position = Vector2(24, 184)
 [node name="player" parent="." instance=ExtResource("6_ysl8t")]
 position = Vector2(24, 136)
 
-[node name="black_spike" parent="." instance=ExtResource("7_cjfku")]
-position = Vector2(358, 183)
-
 [node name="black_spike3" parent="." instance=ExtResource("7_cjfku")]
 position = Vector2(30, 272)
 rotation = 1.5708
@@ -105,17 +102,6 @@ rotation = 1.5708
 [node name="black_spike8" parent="." instance=ExtResource("7_cjfku")]
 position = Vector2(238, 228)
 rotation = 1.5708
-
-[node name="black_spike13" parent="." instance=ExtResource("7_cjfku")]
-position = Vector2(354, 191)
-rotation = -1.5708
-
-[node name="white_spike9" parent="." instance=ExtResource("8_i3nmi")]
-position = Vector2(344, 101)
-
-[node name="white_spike12" parent="." instance=ExtResource("8_i3nmi")]
-position = Vector2(352, 64)
-rotation = -1.5708
 
 [node name="white_spike3" parent="." instance=ExtResource("8_i3nmi")]
 position = Vector2(4, 97)
