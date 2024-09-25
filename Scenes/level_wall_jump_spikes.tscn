@@ -83,7 +83,27 @@ position = Vector2(24, 136)
 position = Vector2(358, 183)
 
 [node name="black_spike3" parent="." instance=ExtResource("7_cjfku")]
-position = Vector2(358, 215)
+position = Vector2(30, 272)
+rotation = 1.5708
+
+[node name="black_spike4" parent="." instance=ExtResource("7_cjfku")]
+position = Vector2(30, 264)
+rotation = 1.5708
+
+[node name="black_spike5" parent="." instance=ExtResource("7_cjfku")]
+position = Vector2(30, 256)
+rotation = 1.5708
+
+[node name="black_spike6" parent="." instance=ExtResource("7_cjfku")]
+position = Vector2(238, 212)
+rotation = 1.5708
+
+[node name="black_spike7" parent="." instance=ExtResource("7_cjfku")]
+position = Vector2(238, 220)
+rotation = 1.5708
+
+[node name="black_spike8" parent="." instance=ExtResource("7_cjfku")]
+position = Vector2(238, 228)
 rotation = 1.5708
 
 [node name="black_spike13" parent="." instance=ExtResource("7_cjfku")]
@@ -94,11 +114,31 @@ rotation = -1.5708
 position = Vector2(344, 101)
 
 [node name="white_spike12" parent="." instance=ExtResource("8_i3nmi")]
-position = Vector2(344, 77)
+position = Vector2(352, 64)
 rotation = -1.5708
 
 [node name="white_spike3" parent="." instance=ExtResource("8_i3nmi")]
-position = Vector2(335, 59)
+position = Vector2(4, 97)
+rotation = 1.5708
+
+[node name="white_spike4" parent="." instance=ExtResource("8_i3nmi")]
+position = Vector2(4, 105)
+rotation = 1.5708
+
+[node name="white_spike5" parent="." instance=ExtResource("8_i3nmi")]
+position = Vector2(4, 89)
+rotation = 1.5708
+
+[node name="white_spike6" parent="." instance=ExtResource("8_i3nmi")]
+position = Vector2(212, 53)
+rotation = 1.5708
+
+[node name="white_spike7" parent="." instance=ExtResource("8_i3nmi")]
+position = Vector2(212, 61)
+rotation = 1.5708
+
+[node name="white_spike8" parent="." instance=ExtResource("8_i3nmi")]
+position = Vector2(212, 69)
 rotation = 1.5708
 
 [node name="white_key" parent="." instance=ExtResource("9_d6fsf")]
