@@ -86,12 +86,6 @@ position = Vector2(304, 184)
 [node name="white_door" parent="." instance=ExtResource("4_6j7ia")]
 position = Vector2(304, 136)
 
-[node name="shadow" parent="." instance=ExtResource("5_k2yt2")]
-position = Vector2(16, 184)
-
-[node name="player" parent="." instance=ExtResource("6_ytqg6")]
-position = Vector2(16, 136)
-
 [node name="black_spike" parent="." instance=ExtResource("7_7cmja")]
 position = Vector2(16, 312)
 
@@ -174,6 +168,12 @@ position = Vector2(217, 175)
 [node name="black_switch" parent="." node_paths=PackedStringArray("wall") instance=ExtResource("18_s2vyl")]
 position = Vector2(59, 183)
 wall = NodePath("../toggle_wall_black")
+
+[node name="shadow" parent="." instance=ExtResource("5_k2yt2")]
+position = Vector2(16, 184)
+
+[node name="player" parent="." instance=ExtResource("6_ytqg6")]
+position = Vector2(16, 136)
 
 [connection signal="button_up" from="pause_menu/VBoxContainer/VBoxContainer/continue" to="." method="close_pause"]
 [connection signal="button_up" from="pause_menu/VBoxContainer/VBoxContainer/quit_to_main" to="." method="_on_quit_to_main_button_up"]

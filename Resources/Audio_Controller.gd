@@ -1,10 +1,13 @@
 extends Node
-@onready var bgm = $BGM
-@onready var jump = $Jump
-@onready var damage = $Damage
-@onready var key_pickup = $Key_Pickup
-@onready var descent = $Descent
-@onready var landing = $Landing
+@onready var bgm: AudioStreamPlayer = $BGM
+@onready var jump: AudioStreamPlayer = $Jump
+@onready var damage: AudioStreamPlayer = $Damage
+@onready var key_pickup: AudioStreamPlayer = $Key_Pickup
+@onready var descent: AudioStreamPlayer = $Descent
+@onready var landing: AudioStreamPlayer = $Landing
+@onready var click_on: AudioStreamPlayer = $Click_On
+@onready var click_off: AudioStreamPlayer = $Click_Off
+
 
 
 # Called when the node enters the scene tree for the first time.
