@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b1njf3dqg7467"]
+[gd_scene load_steps=23 format=4 uid="uid://b1njf3dqg7467"]
 
 [ext_resource type="Script" path="res://Scenes/test_level.gd" id="1_6gsae"]
 [ext_resource type="Texture2D" uid="uid://ct6xty4gxcbim" path="res://Textures/tileset.png" id="2_iq44j"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://c0m5k7nvidl2n" path="res://Scenes/black_block.tscn" id="12_1ridc"]
 [ext_resource type="Theme" uid="uid://d334f2xsycvqg" path="res://Resources/basic_theme.tres" id="13_swlav"]
 [ext_resource type="PackedScene" uid="uid://tekfpdogpack" path="res://Scenes/moving_platform.tscn" id="14_3ed0j"]
+[ext_resource type="PackedScene" uid="uid://qr8nx2aqrhmg" path="res://Scenes/white_switch.tscn" id="15_uyfgu"]
+[ext_resource type="PackedScene" uid="uid://clsg4ivfsr1aq" path="res://Scenes/toggle_wall_white.tscn" id="16_yldhq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_svles"]
 texture = ExtResource("2_iq44j")
@@ -156,6 +158,13 @@ size_flags_vertical = 3
 position = Vector2(32, 48)
 curve = SubResource("Curve2D_dyft5")
 loop = false
+
+[node name="white_switch" parent="." node_paths=PackedStringArray("wall") instance=ExtResource("15_uyfgu")]
+position = Vector2(57, 134)
+wall = NodePath("../toggle_wall_white")
+
+[node name="toggle_wall_white" parent="." instance=ExtResource("16_yldhq")]
+position = Vector2(215, 122)
 
 [connection signal="button_up" from="pause_menu/VBoxContainer/VBoxContainer/continue" to="." method="close_pause"]
 [connection signal="button_up" from="pause_menu/VBoxContainer/VBoxContainer/quit_to_main" to="." method="_on_quit_to_main_button_up"]
