@@ -5,27 +5,28 @@ var flipped:bool = false
 # Called when the node enters the scene tree for the first time.
 @export var wall:ToggleWall
 
-func _ready() -> void:
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if flipable:
 		if Input.is_action_just_pressed("interact"):
 			if flipped:
-				$switch_sprite.flip_v = false
+				$switch_sprite.flip_v = not $switch_sprite.flip_v 
 				flipped=false
 				wall.reappear()
 			else:
-				$switch_sprite.flip_v = true
+				$switch_sprite.flip_v = not $switch_sprite.flip_v 
 				flipped=true
 				wall.disappear()
 
 
 func _on_body_entered(body: Node2D) -> void:
-	flipable = true
+	if body.is_in_group("player"):
+		print("entered")
+		flipable = true
 
 
 func _on_body_exited(body: Node2D) -> void:
-	flipable = false
+	if body.is_in_group("player"):
+		print("exited")
+		flipable = false

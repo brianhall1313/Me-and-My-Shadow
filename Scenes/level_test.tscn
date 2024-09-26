@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b1njf3dqg7467"]
+[gd_scene load_steps=25 format=4 uid="uid://b1njf3dqg7467"]
 
 [ext_resource type="Script" path="res://Scenes/test_level.gd" id="1_6gsae"]
 [ext_resource type="Texture2D" uid="uid://ct6xty4gxcbim" path="res://Textures/tileset.png" id="2_iq44j"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://tekfpdogpack" path="res://Scenes/moving_platform.tscn" id="14_3ed0j"]
 [ext_resource type="PackedScene" uid="uid://qr8nx2aqrhmg" path="res://Scenes/white_switch.tscn" id="15_uyfgu"]
 [ext_resource type="PackedScene" uid="uid://clsg4ivfsr1aq" path="res://Scenes/toggle_wall_white.tscn" id="16_yldhq"]
+[ext_resource type="PackedScene" uid="uid://blfym1i34rfo7" path="res://Scenes/toggle_wall_black.tscn" id="17_st3v5"]
+[ext_resource type="PackedScene" uid="uid://bk2qm4ndbmvd1" path="res://Scenes/black_switch.tscn" id="18_s2vyl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_svles"]
 texture = ExtResource("2_iq44j")
@@ -103,10 +105,10 @@ position = Vector2(56, 96)
 position = Vector2(56, 224)
 
 [node name="white_block" parent="." instance=ExtResource("11_l773i")]
-position = Vector2(101, 127)
+position = Vector2(272, 128)
 
 [node name="black_block" parent="." instance=ExtResource("12_1ridc")]
-position = Vector2(156, 193)
+position = Vector2(272, 192)
 
 [node name="pause_menu" type="PanelContainer" parent="."]
 process_mode = 3
@@ -165,6 +167,13 @@ wall = NodePath("../toggle_wall_white")
 
 [node name="toggle_wall_white" parent="." instance=ExtResource("16_yldhq")]
 position = Vector2(215, 122)
+
+[node name="toggle_wall_black" parent="." instance=ExtResource("17_st3v5")]
+position = Vector2(217, 175)
+
+[node name="black_switch" parent="." node_paths=PackedStringArray("wall") instance=ExtResource("18_s2vyl")]
+position = Vector2(59, 183)
+wall = NodePath("../toggle_wall_black")
 
 [connection signal="button_up" from="pause_menu/VBoxContainer/VBoxContainer/continue" to="." method="close_pause"]
 [connection signal="button_up" from="pause_menu/VBoxContainer/VBoxContainer/quit_to_main" to="." method="_on_quit_to_main_button_up"]
