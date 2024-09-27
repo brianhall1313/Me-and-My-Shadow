@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://d0g77iin65fey"]
+[gd_scene load_steps=17 format=4 uid="uid://d0g77iin65fey"]
 
 [ext_resource type="Script" path="res://Scenes/test_level.gd" id="1_l37rt"]
 [ext_resource type="PackedScene" uid="uid://u8fiysfj1plv" path="res://Scenes/black_door.tscn" id="2_h4kdd"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://biqrfuoenibp4" path="res://Scenes/black_key.tscn" id="8_3pvg2"]
 [ext_resource type="PackedScene" uid="uid://cbx6ojddy1845" path="res://Scenes/white_block.tscn" id="9_1lpwm"]
 [ext_resource type="PackedScene" uid="uid://c0m5k7nvidl2n" path="res://Scenes/black_block.tscn" id="10_86ino"]
-[ext_resource type="Theme" uid="uid://d334f2xsycvqg" path="res://Resources/basic_theme.tres" id="11_ujsl3"]
+[ext_resource type="PackedScene" uid="uid://du2q46h3lv3xl" path="res://Scenes/pause_menu.tscn" id="12_vbay7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tvihb"]
 texture = ExtResource("2_mpob5")
@@ -42,22 +42,9 @@ tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tao65")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyjog"]
-bg_color = Color(0.103744, 0.103744, 0.103743, 1)
-
 [node name="level_4" type="Node2D"]
 script = ExtResource("1_l37rt")
 level = 5
-
-[node name="bottom_background" type="ColorRect" parent="."]
-offset_top = 160.0
-offset_right = 320.0
-offset_bottom = 320.0
-
-[node name="top_background" type="ColorRect" parent="."]
-offset_right = 320.0
-offset_bottom = 160.0
-color = Color(0, 0, 0, 1)
 
 [node name="background" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -156,51 +143,7 @@ position = Vector2(240, 128)
 [node name="black_block" parent="." instance=ExtResource("10_86ino")]
 position = Vector2(240, 192)
 
-[node name="pause_menu" type="PanelContainer" parent="."]
-process_mode = 3
-visible = false
-offset_right = 320.0
-offset_bottom = 328.0
-theme = ExtResource("11_ujsl3")
-theme_override_styles/panel = SubResource("StyleBoxFlat_wyjog")
+[node name="pause_menu" parent="." instance=ExtResource("12_vbay7")]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="pause_menu"]
-layout_mode = 2
-
-[node name="Control3" type="Control" parent="pause_menu/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.75
-
-[node name="Label" type="Label" parent="pause_menu/VBoxContainer"]
-layout_mode = 2
-text = "Paused"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Control" type="Control" parent="pause_menu/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="pause_menu/VBoxContainer"]
-layout_mode = 2
-
-[node name="continue" type="Button" parent="pause_menu/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 10
-text = "Back to Game"
-
-[node name="quit_to_main" type="Button" parent="pause_menu/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 10
-text = "Back to Level Selection"
-
-[node name="Control2" type="Control" parent="pause_menu/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[connection signal="button_up" from="pause_menu/VBoxContainer/VBoxContainer/continue" to="." method="close_pause"]
-[connection signal="button_up" from="pause_menu/VBoxContainer/VBoxContainer/quit_to_main" to="." method="_on_quit_to_main_button_up"]
+[connection signal="continue_game" from="pause_menu" to="." method="close_pause"]
+[connection signal="quit_game" from="pause_menu" to="." method="_on_quit_to_main_button_up"]

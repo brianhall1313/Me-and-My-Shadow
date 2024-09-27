@@ -5,9 +5,8 @@ extends Node2D
 
 @onready var black_door = $black_door
 @onready var white_door = $white_door
-@onready var bottom_background = $bottom_background
-@onready var top_background = $top_background
-@onready var pause_menu = $pause_menu
+@onready var pause_menu: PanelContainer = $pause_menu
+
 
 var check_player_damaged:bool = false
 var is_paused:bool = false
@@ -16,8 +15,6 @@ var is_paused:bool = false
 func _ready():
 	connect_to_global_signal_bus()
 	level = Global.level
-	top_background.show()
-	bottom_background.show()
 	var new = Global.wipe.instantiate()
 	add_child(new)
 	new.wipe_left()
@@ -77,14 +74,14 @@ func popup_transition_two():
 	new.wipe_left()
 
 func open_pause():
+	print("open pause")
 	is_paused = true
 	popup_transition_one()
 	await GlobalSignalBus.transition_done
-	pause_menu.show()
+	pause_menu.pause()
 	popup_transition_two()
 	await GlobalSignalBus.transition_done
 	Global.pause()
-	$pause_menu/VBoxContainer/VBoxContainer/continue.grab_focus()
 	
 
 func close_pause():
