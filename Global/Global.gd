@@ -4,6 +4,7 @@ const levels:Array = [
 	"res://Scenes/level_0.tscn",
 	"res://Scenes/level_1.tscn",
 	"res://Scenes/level_wall_jump.tscn",
+	"res://Scenes/level_doors.tscn",
 	"res://Scenes/level_2.tscn",
 	"res://Scenes/level_wall_jump_spikes.tscn",
 	"res://Scenes/level_3.tscn",
@@ -24,10 +25,10 @@ const levels:Array = [
 var in_transition:bool = false
 
 
-var default_completed_level_log:Array= [false,false,false,false,false,false,false,false,false,false,false,false,false]
-var default_open_level_log:Array = [true,false,false,false,false,false,false,false,false,false,false,false,false]
-var completed_level_log:Array = [false,false,false,false,false,false,false,false,false,false,false,false,false]
-var open_level_log:Array = [true,false,false,false,false,false,false,false,false,false,false,false,false]
+var default_completed_level_log:Array= [false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+var default_open_level_log:Array = [true,false,false,false,false,false,false,false,false,false,false,false,false,false]
+var completed_level_log:Array = [false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+var open_level_log:Array = [true,false,false,false,false,false,false,false,false,false,false,false,false,false]
 var level:int = 0
 
 var debug:bool = true
@@ -36,6 +37,8 @@ var debug:bool = true
 func _ready():
 	GlobalSignalBus.connect("transition_done",unpause)
 	GlobalSignalBus.connect("transition_start",pause)
+	if ( len(default_completed_level_log) != len(default_open_level_log)) or ( len(default_completed_level_log) != len(completed_level_log)) or ( len(default_completed_level_log) != len(open_level_log)):
+		print("level configuration error")
 
 func save_stuff():
 	var save_data:Dictionary={"complete":completed_level_log.duplicate(),"open":open_level_log.duplicate()}

@@ -8,6 +8,7 @@ bg_color = Color(0.103744, 0.103744, 0.103743, 1)
 
 [node name="pause_menu" type="PanelContainer"]
 process_mode = 3
+visible = false
 offset_right = 320.0
 offset_bottom = 328.0
 theme = ExtResource("1_yvv71")

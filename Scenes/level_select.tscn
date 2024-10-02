@@ -160,6 +160,15 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
+[node name="13" type="Button" parent="Control/VBoxContainer/level_grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "13"
+icon = ExtResource("3_r5i16")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
 [node name="back" type="Button" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
@@ -179,4 +188,5 @@ text = "Back"
 [connection signal="button_up" from="Control/VBoxContainer/level_grid/10" to="." method="_on_10_button_up"]
 [connection signal="button_up" from="Control/VBoxContainer/level_grid/11" to="." method="_on_11_button_up"]
 [connection signal="button_up" from="Control/VBoxContainer/level_grid/12" to="." method="_on_12_button_up"]
+[connection signal="button_up" from="Control/VBoxContainer/level_grid/13" to="." method="_on_13_button_up"]
 [connection signal="button_up" from="Control/VBoxContainer/back" to="." method="_on_back_button_up"]
