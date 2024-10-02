@@ -8,7 +8,7 @@ signal quit_game
 func _ready() -> void:
 	hide()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("back") and paused:
 		continuing()
 
