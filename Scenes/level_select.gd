@@ -4,11 +4,10 @@ extends Node2D
 @onready var locked_button_icon = preload("res://Textures/button_locked.png")
 @onready var completed_button_icon = preload("res://Textures/button_complete.png")
 
-@onready var level_grid = $Control/VBoxContainer/level_grid
-
+@onready var level_grid: GridContainer = $Control/VBoxContainer/level_grid
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	for level in level_grid.get_children():
 		if Global.completed_level_log[int(level.text)]:
 			level.icon = completed_button_icon
@@ -25,16 +24,16 @@ func _ready():
 	child.grab_focus()
 
 
-func _process(_delta):
+func _process(_delta) -> void:
 	if Input.is_action_just_pressed("back"):
 		exit()
 
-func transition_to_level():
+func transition_to_level() -> void:
 	var new = Global.wipe.instantiate()
 	add_child(new)
 	new.wipe_right()
 
-func exit():
+func exit() -> void:
 	var new = Global.wipe.instantiate()
 	add_child(new)
 	new.wipe_out()

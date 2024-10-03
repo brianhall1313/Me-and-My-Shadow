@@ -66,10 +66,14 @@ func handle_wall_jump():
 			velocity.x = wall_normal.x * movement_data.speed
 			velocity.y = movement_data.jump_velocity
 			is_jumping = true
+			AudioController.jump.play()
+			wall_animation("left")
 		if Input.is_action_just_pressed("move_right") and wall_normal == Vector2.RIGHT:
 			velocity.x = wall_normal.x * movement_data.speed
 			velocity.y = movement_data.jump_velocity
 			is_jumping = true
+			AudioController.jump.play()
+			wall_animation("right")
 
 
 func handle_jump():
@@ -84,6 +88,7 @@ func handle_jump():
 			if air_jumps:
 				air_jumps = false
 				velocity.y = movement_data.air_jump_velocity
+				AudioController.jump.play()
 				return
 		#shorten jump
 		if Input.is_action_just_released("jump"):
@@ -149,6 +154,23 @@ func landing_animation():
 	
 	new.explode()
 
+
+func wall_animation(direction):
+	var new = Global.landing_particle.instantiate()
+	get_tree().get_current_scene().add_child(new)
+	new.position = position
+	if name == "shadow":
+		new.modulate = Color.BLACK
+		new.position.y = position.y-floor_offset
+	else:
+		new.position.y = position.y+floor_offset
+	if direction == "left":
+		new.rotation = 135
+		new.position.x +=5
+	else:
+		new.rotation = 0
+		new.position.x -=5
+	new.explode()
 
 func handle_animation(direction):
 	if not is_on_floor():
