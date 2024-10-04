@@ -3,11 +3,11 @@ extends Node
 const levels:Array = [
 	"res://Scenes/level_0.tscn",
 	"res://Scenes/level_1.tscn",
+	"res://Scenes/level_2.tscn",
+	"res://Scenes/level_3.tscn",
 	"res://Scenes/level_wall_jump.tscn",
 	"res://Scenes/level_doors.tscn",
-	"res://Scenes/level_2.tscn",
 	"res://Scenes/level_wall_jump_spikes.tscn",
-	"res://Scenes/level_3.tscn",
 	"res://Scenes/level_4.tscn",
 	"res://Scenes/level_5.tscn",
 	"res://Scenes/level_6.tscn",

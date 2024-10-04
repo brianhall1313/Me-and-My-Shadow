@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://havbp2qpw5hb"]
+
+[ext_resource type="Texture2D" uid="uid://7pl5h8w0j7ps" path="res://Textures/button_locked.png" id="1_7051m"]
+[ext_resource type="Script" path="res://Scenes/level_button.gd" id="2_k1kqn"]
+
+[node name="level_button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0"
+icon = ExtResource("1_7051m")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("2_k1kqn")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

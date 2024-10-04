@@ -8,6 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GlobalSignalBus.connect("level_button_pressed",load_level)
 	for level in level_grid.get_children():
 		if Global.completed_level_log[int(level.text)]:
 			level.icon = completed_button_icon
@@ -40,8 +41,8 @@ func exit() -> void:
 	await GlobalSignalBus.transition_done
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
-
-func load_level() -> void:
+func load_level(level) -> void:
+	Global.level=level
 	transition_to_level()
 	await GlobalSignalBus.transition_done
 	Global.load_level()
@@ -49,68 +50,3 @@ func load_level() -> void:
 
 func _on_back_button_up() -> void:
 	exit()
-
-
-func _on_0_button_up() -> void:
-	Global.level = 0
-	load_level()
-	
-func _on_1_button_up() -> void:
-	Global.level = 1
-	load_level()
-	
-func _on_2_button_up() -> void:
-	Global.level = 2
-	load_level()
-	
-func _on_3_button_up() -> void:
-	Global.level = 3
-	load_level()
-	
-func _on_4_button_up() -> void:
-	Global.level = 4
-	load_level()
-
-func _on_5_button_up() -> void:
-	Global.level = 5
-	load_level()
-
-func _on_6_button_up() -> void:
-	Global.level = 6
-	load_level()
-
-
-func _on_7_button_up() -> void:
-	Global.level = 7
-	load_level()
-
-
-func _on_8_button_up() -> void:
-	Global.level = 8
-	load_level()
-
-
-
-func _on_9_button_up() -> void:
-	Global.level = 9
-	load_level()
-
-
-func _on_10_button_up() -> void:
-	Global.level = 10
-	load_level()
-
-
-func _on_11_button_up() -> void:
-	Global.level = 11
-	load_level()
-
-
-func _on_12_button_up() -> void:
-	Global.level = 12
-	load_level()
-
-
-func _on_13_button_up() -> void:
-	Global.level = 13
-	load_level()

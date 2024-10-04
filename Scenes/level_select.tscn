@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/level_select.gd" id="1_s1y1c"]
 [ext_resource type="Theme" uid="uid://d334f2xsycvqg" path="res://Resources/basic_theme.tres" id="2_4k0f8"]
-[ext_resource type="Texture2D" uid="uid://7pl5h8w0j7ps" path="res://Textures/button_locked.png" id="3_r5i16"]
+[ext_resource type="PackedScene" uid="uid://havbp2qpw5hb" path="res://Scenes/level_button.tscn" id="3_cvcaw"]
 
 [node name="level_select" type="Node2D"]
 script = ExtResource("1_s1y1c")
@@ -43,131 +43,60 @@ size_flags_vertical = 3
 theme_override_constants/h_separation = 5
 columns = 5
 
-[node name="0" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="0" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "0"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
-[node name="1" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="1" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "1"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
-[node name="2" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="2" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "2"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
-[node name="3" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="3" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "3"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
-[node name="4" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="4" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "4"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
-[node name="5" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="5" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "5"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
-[node name="6" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="6" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "6"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
-[node name="7" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="7" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "7"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
-[node name="8" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="8" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "8"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
-[node name="9" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="9" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "9"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
-[node name="10" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="10" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "10"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
-[node name="11" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="11" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "11"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
-[node name="12" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="12" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "12"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
-[node name="13" type="Button" parent="Control/VBoxContainer/level_grid"]
+[node name="13" parent="Control/VBoxContainer/level_grid" instance=ExtResource("3_cvcaw")]
 layout_mode = 2
-size_flags_horizontal = 3
 text = "13"
-icon = ExtResource("3_r5i16")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
 
 [node name="back" type="Button" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
@@ -175,18 +104,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Back"
 
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/0" to="." method="_on_0_button_up"]
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/1" to="." method="_on_1_button_up"]
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/2" to="." method="_on_2_button_up"]
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/3" to="." method="_on_3_button_up"]
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/4" to="." method="_on_4_button_up"]
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/5" to="." method="_on_5_button_up"]
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/6" to="." method="_on_6_button_up"]
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/7" to="." method="_on_7_button_up"]
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/8" to="." method="_on_8_button_up"]
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/9" to="." method="_on_9_button_up"]
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/10" to="." method="_on_10_button_up"]
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/11" to="." method="_on_11_button_up"]
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/12" to="." method="_on_12_button_up"]
-[connection signal="button_up" from="Control/VBoxContainer/level_grid/13" to="." method="_on_13_button_up"]
+[node name="Control" type="Control" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
 [connection signal="button_up" from="Control/VBoxContainer/back" to="." method="_on_back_button_up"]

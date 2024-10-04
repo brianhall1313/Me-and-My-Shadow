@@ -9,3 +9,5 @@ signal pushing(vector)
 
 signal transition_done
 signal transition_start
+
+signal level_button_pressed(level)
