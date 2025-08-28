@@ -7,6 +7,7 @@ extends Node
 @onready var landing: AudioStreamPlayer = $Landing
 @onready var click_on: AudioStreamPlayer = $Click_On
 @onready var click_off: AudioStreamPlayer = $Click_Off
+@onready var wall_jump: AudioStreamPlayer = $Wall_jump
 
 
 

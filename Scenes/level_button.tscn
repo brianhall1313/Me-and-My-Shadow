@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://havbp2qpw5hb"]
 
 [ext_resource type="Texture2D" uid="uid://7pl5h8w0j7ps" path="res://Textures/button_locked.png" id="1_7051m"]
-[ext_resource type="Script" path="res://Scenes/level_button.gd" id="2_k1kqn"]
+[ext_resource type="Script" uid="uid://dfouujyjq3hty" path="res://Scenes/level_button.gd" id="2_k1kqn"]
 
 [node name="level_button" type="Button"]
 offset_right = 8.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://tekfpdogpack"]
 
-[ext_resource type="Script" path="res://Scenes/moving_platform.gd" id="1_7fbx1"]
+[ext_resource type="Script" uid="uid://bh2vggloiahst" path="res://Scenes/moving_platform.gd" id="1_7fbx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckntt"]
 size = Vector2(24, 8)
@@ -39,8 +39,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nftt8"]
 _data = {
-"RESET": SubResource("Animation_v4jyq"),
-"moving_platform": SubResource("Animation_8wyid")
+&"RESET": SubResource("Animation_v4jyq"),
+&"moving_platform": SubResource("Animation_8wyid")
 }
 
 [node name="moving_platform" type="Path2D"]

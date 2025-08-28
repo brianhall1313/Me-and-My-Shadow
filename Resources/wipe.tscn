@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://nl1sih0xycdi"]
 
-[ext_resource type="Script" path="res://Resources/wipe.gd" id="1_oxgp5"]
+[ext_resource type="Script" uid="uid://40ofvu3cielv" path="res://Resources/wipe.gd" id="1_oxgp5"]
 
 [node name="wipe" type="Control"]
 process_mode = 3

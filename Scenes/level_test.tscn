@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=4 uid="uid://b1njf3dqg7467"]
 
-[ext_resource type="Script" path="res://Scenes/test_level.gd" id="1_6gsae"]
+[ext_resource type="Script" uid="uid://3fdihkt2lgbt" path="res://Scenes/test_level.gd" id="1_6gsae"]
 [ext_resource type="Texture2D" uid="uid://ct6xty4gxcbim" path="res://Textures/tileset.png" id="2_iq44j"]
 [ext_resource type="PackedScene" uid="uid://u8fiysfj1plv" path="res://Scenes/black_door.tscn" id="3_ye4fv"]
 [ext_resource type="PackedScene" uid="uid://c00jo8qmg4n57" path="res://Scenes/white_door.tscn" id="4_6j7ia"]

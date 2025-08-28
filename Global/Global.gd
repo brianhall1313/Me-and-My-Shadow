@@ -34,6 +34,7 @@ var level:int = 0
 var debug:bool = true
 
 
+
 func _ready():
 	GlobalSignalBus.connect("transition_done",unpause)
 	GlobalSignalBus.connect("transition_start",pause)

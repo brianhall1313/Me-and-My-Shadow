@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5vs0rnqra8n2"]
 
 [ext_resource type="Texture2D" uid="uid://c2ovyx5geteto" path="res://Textures/key_white.png" id="1_m6ve8"]
-[ext_resource type="Script" path="res://Scenes/white_key.gd" id="1_vxoox"]
+[ext_resource type="Script" uid="uid://sdjsu568ptg1" path="res://Scenes/white_key.gd" id="1_vxoox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxcd7"]
 size = Vector2(4, 8)

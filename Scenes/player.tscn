@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://blhemidxahef0"]
 
-[ext_resource type="Script" path="res://Scenes/player.gd" id="1_ybc71"]
+[ext_resource type="Script" uid="uid://bho4nca8vayvt" path="res://Scenes/player.gd" id="1_ybc71"]
 [ext_resource type="Resource" uid="uid://q71fj1pv812p" path="res://Resources/PlayerMovementData.tres" id="2_204u5"]
 [ext_resource type="Texture2D" uid="uid://cv8y7lqr2keqj" path="res://Textures/player_character(1).png" id="3_l1umc"]
 
@@ -83,8 +83,4 @@ shape = SubResource("RectangleShape2D_72rwe")
 
 [node name="coyote_time" type="Timer" parent="."]
 wait_time = 0.15
-one_shot = true
-
-[node name="wall_jump_time" type="Timer" parent="."]
-wait_time = 0.05
 one_shot = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://wnq5ncsxhm3i"]
 
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_pi1df"]
+[ext_resource type="Script" uid="uid://18nk8tj5t43f" path="res://Scenes/main.gd" id="1_pi1df"]
 [ext_resource type="Theme" uid="uid://d334f2xsycvqg" path="res://Resources/basic_theme.tres" id="2_4f0sp"]
 [ext_resource type="FontFile" uid="uid://cr321lsktxq0x" path="res://Resources/Tiny5-Regular.ttf" id="3_h84e2"]
 
@@ -78,9 +78,9 @@ layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_yskj1")
 text = "New Game"
 
@@ -135,7 +135,7 @@ text = "Movement: Arrow Keys, WASD
 
 Jump: Space Bar
 jump in the air for a double jump
-Wall jump: 
+Kick off a wall: 
 pressing the direction away from the wall
 
 Interact: Hold Up(a button on controllers)

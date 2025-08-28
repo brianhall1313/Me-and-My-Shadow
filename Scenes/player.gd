@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 @onready var coyote_timer = $coyote_time
-@onready var wall_jump_time = $wall_jump_time
 @onready var animated_sprite = $animated_sprite
 
 
@@ -44,9 +43,6 @@ func _physics_process(delta):
 	handle_animation(direction)
 	var was_on_floor = is_on_floor()
 	move_and_slide()
-	wall_jump_available = is_on_wall_only()
-	if wall_jump_available: 
-		wall_jump_time.start()
 	if was_on_floor and not is_on_floor() and not is_jumping:
 		is_falling = true
 		coyote_timer.start()
@@ -66,13 +62,13 @@ func handle_wall_jump():
 			velocity.x = wall_normal.x * movement_data.speed
 			velocity.y = movement_data.jump_velocity
 			is_jumping = true
-			AudioController.jump.play()
+			AudioController.wall_jump.play()
 			wall_animation("left")
 		if Input.is_action_just_pressed("move_right") and wall_normal == Vector2.RIGHT:
 			velocity.x = wall_normal.x * movement_data.speed
 			velocity.y = movement_data.jump_velocity
 			is_jumping = true
-			AudioController.jump.play()
+			AudioController.wall_jump.play()
 			wall_animation("right")
 
 

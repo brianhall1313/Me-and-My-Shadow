@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c00jo8qmg4n57"]
 
 [ext_resource type="Texture2D" uid="uid://b7hihoigl45e4" path="res://Textures/locked_white.png" id="1_7v82l"]
-[ext_resource type="Script" path="res://Scenes/white_door.gd" id="2_uiecx"]
+[ext_resource type="Script" uid="uid://cljcvrsfrs1vo" path="res://Scenes/white_door.gd" id="2_uiecx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5fbk"]
 size = Vector2(16, 16)
