@@ -5,6 +5,7 @@ const levels:Array = [
 	"res://Scenes/level_1.tscn",
 	"res://Scenes/level_2.tscn",
 	"res://Scenes/level_3.tscn",
+	"res://Scenes/displaced_platform.tscn",
 	"res://Scenes/level_wall_jump.tscn",
 	"res://Scenes/level_doors.tscn",
 	"res://Scenes/level_wall_jump_spikes.tscn",
@@ -25,10 +26,10 @@ const levels:Array = [
 var in_transition:bool = false
 
 
-var default_completed_level_log:Array= [false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-var default_open_level_log:Array = [true,false,false,false,false,false,false,false,false,false,false,false,false,false]
-var completed_level_log:Array = [false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-var open_level_log:Array = [true,false,false,false,false,false,false,false,false,false,false,false,false,false]
+var default_completed_level_log:Array= [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+var default_open_level_log:Array = [true,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+var completed_level_log:Array = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+var open_level_log:Array = [true,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 var level:int = 0
 
 var debug:bool = true
