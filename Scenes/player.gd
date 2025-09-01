@@ -10,6 +10,7 @@ var sprite_height:float = 16
 var is_jumping:bool = false
 var is_falling:bool = false
 var wall_jump_available:bool = false
+var wall_jumping:bool = false
 var floor_offset:float = sprite_height/2
 var air_jumps:bool = true
 
@@ -62,14 +63,16 @@ func handle_wall_jump():
 			velocity.x = wall_normal.x * movement_data.speed
 			velocity.y = movement_data.jump_velocity
 			is_jumping = true
-			AudioController.wall_jump.play()
 			wall_animation("left")
+			AudioController.wall_jump.play()
+			wall_jumping = true
 		if Input.is_action_just_pressed("move_right") and wall_normal == Vector2.RIGHT:
 			velocity.x = wall_normal.x * movement_data.speed
 			velocity.y = movement_data.jump_velocity
 			is_jumping = true
-			AudioController.wall_jump.play()
 			wall_animation("right")
+			AudioController.wall_jump.play()
+			wall_jumping = true
 
 
 func handle_jump():
@@ -169,12 +172,18 @@ func wall_animation(direction):
 	new.explode()
 
 func handle_animation(direction):
-	if not is_on_floor():
-		animated_sprite.play("jump")
-		animated_sprite.flip_h = direction<0
-		return
-	if direction == 0:
-		animated_sprite.play("idle")
+	if not wall_jumping:
+		if not is_on_floor():
+			animated_sprite.play("jump")
+			animated_sprite.flip_h = direction<0
+			return
+		if direction == 0:
+			animated_sprite.play("idle")
+		else:
+			animated_sprite.play("run")
+			animated_sprite.flip_h = direction<0
 	else:
-		animated_sprite.play("run")
-		animated_sprite.flip_h = direction<0
+		animated_sprite.play("wall_jump")
+		animated_sprite.flip_h = direction > 0
+		await animated_sprite.animation_looped
+		wall_jumping = false
