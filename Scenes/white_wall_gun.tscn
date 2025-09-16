@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://h62dmos2w5dr"]
+
+[ext_resource type="Texture2D" uid="uid://bn06xjl80wnbe" path="res://Textures/white_gun.png" id="1_3wsnm"]
+[ext_resource type="Script" uid="uid://byfa4ls3ax62r" path="res://Scenes/white_wall_gun.gd" id="1_r67xb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwuyp"]
+atlas = ExtResource("1_3wsnm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mucra"]
+atlas = ExtResource("1_3wsnm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h215"]
+atlas = ExtResource("1_3wsnm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlmbk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwuyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mucra")
+}],
+"loop": true,
+"name": &"charging",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h215")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hobj5"]
+size = Vector2(11, 8)
+
+[node name="wall_gun" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_mlmbk")
+animation = &"charging"
+script = ExtResource("1_r67xb")
+
+[node name="Area2D" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.5, 0)
+shape = SubResource("RectangleShape2D_hobj5")
