@@ -6,7 +6,10 @@ extends AnimatedSprite2D
 
 func _ready() -> void:
 	timer.connect("timeout",shoot)
+	timer.start()
 
 
 func shoot() -> void:
-	pass
+	var new = Global.shot.instantiate()
+	get_parent().add_child(new)
+	new.shoot(self.global_position,self.global_rotation)

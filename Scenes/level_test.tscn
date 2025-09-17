@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://b1njf3dqg7467"]
+[gd_scene load_steps=25 format=4 uid="uid://b1njf3dqg7467"]
 
 [ext_resource type="Script" uid="uid://3fdihkt2lgbt" path="res://Scenes/test_level.gd" id="1_6gsae"]
 [ext_resource type="Texture2D" uid="uid://ct6xty4gxcbim" path="res://Textures/tileset.png" id="2_iq44j"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://blfym1i34rfo7" path="res://Scenes/toggle_wall_black.tscn" id="17_st3v5"]
 [ext_resource type="PackedScene" uid="uid://du2q46h3lv3xl" path="res://Scenes/pause_menu.tscn" id="18_24nq8"]
 [ext_resource type="PackedScene" uid="uid://bk2qm4ndbmvd1" path="res://Scenes/black_switch.tscn" id="18_s2vyl"]
+[ext_resource type="PackedScene" uid="uid://h62dmos2w5dr" path="res://Scenes/white_wall_gun.tscn" id="19_fcvc8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_svles"]
 texture = ExtResource("2_iq44j")
@@ -117,6 +118,17 @@ position = Vector2(16, 184)
 position = Vector2(16, 136)
 
 [node name="pause_menu" parent="." instance=ExtResource("18_24nq8")]
+
+[node name="gun_timer" type="Timer" parent="."]
+
+[node name="wall_gun" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("19_fcvc8")]
+position = Vector2(16, 75)
+timer = NodePath("../gun_timer")
+
+[node name="wall_gun2" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("19_fcvc8")]
+position = Vector2(304, 97)
+rotation = 3.1415927
+timer = NodePath("../gun_timer")
 
 [connection signal="continue_game" from="pause_menu" to="." method="close_pause"]
 [connection signal="quit_game" from="pause_menu" to="." method="_on_quit_to_main_button_up"]

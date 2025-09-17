@@ -22,6 +22,7 @@ const levels:Array = [
 @onready var key_particle = preload("res://Animations/key_particle.tscn")
 @onready var landing_particle = preload("res://Animations/landing_particle.tscn")
 @onready var wipe = preload("res://Resources/wipe.tscn")
+@onready var shot = preload("res://Scenes/shot.tscn")
 
 var in_transition:bool = false
 
