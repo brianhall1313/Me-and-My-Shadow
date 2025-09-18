@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://jr0amillhto8" path="res://Scenes/shot.gd" id="1_xhsjy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhsjy"]
-size = Vector2(16, 8)
+size = Vector2(13, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8kjd"]
 atlas = ExtResource("1_g5wfh")
@@ -33,9 +33,12 @@ script = ExtResource("1_xhsjy")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_xhsjy")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nac6n")
 animation = &"shot"
 frame_progress = 0.04953028
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

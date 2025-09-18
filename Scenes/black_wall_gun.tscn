@@ -1,28 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://h62dmos2w5dr"]
+[gd_scene load_steps=8 format=3 uid="uid://cuujwakt3kax3"]
 
-[ext_resource type="Texture2D" uid="uid://bn06xjl80wnbe" path="res://Textures/white_gun.png" id="1_3wsnm"]
-[ext_resource type="Script" uid="uid://boxtmhaeu67of" path="res://Scenes/wall_gun.gd" id="1_r67xb"]
+[ext_resource type="Texture2D" uid="uid://c6sokx4wathek" path="res://Textures/black_gun.png" id="1_ltpib"]
+[ext_resource type="Script" uid="uid://boxtmhaeu67of" path="res://Scenes/wall_gun.gd" id="2_ltpib"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lwuyp"]
-atlas = ExtResource("1_3wsnm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_exjww"]
+atlas = ExtResource("1_ltpib")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mucra"]
-atlas = ExtResource("1_3wsnm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0macj"]
+atlas = ExtResource("1_ltpib")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1h215"]
-atlas = ExtResource("1_3wsnm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_icxn8"]
+atlas = ExtResource("1_ltpib")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mlmbk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lwuyp")
+"texture": SubResource("AtlasTexture_exjww")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mucra")
+"texture": SubResource("AtlasTexture_0macj")
 }],
 "loop": true,
 "name": &"charging",
@@ -30,7 +30,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1h215")
+"texture": SubResource("AtlasTexture_icxn8")
 }],
 "loop": false,
 "name": &"idle",
@@ -42,8 +42,8 @@ size = Vector2(11, 8)
 
 [node name="wall_gun" type="AnimatedSprite2D" groups=["gun"]]
 sprite_frames = SubResource("SpriteFrames_mlmbk")
-animation = &"charging"
-script = ExtResource("1_r67xb")
+animation = &"idle"
+script = ExtResource("2_ltpib")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
