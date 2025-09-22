@@ -125,11 +125,13 @@ position = Vector2(16, 136)
 [node name="wall_gun4" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("19_d6i86")]
 position = Vector2(16, 248)
 timer = NodePath("../gun_timer")
+white = false
 
 [node name="wall_gun3" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("19_d6i86")]
 position = Vector2(304, 264)
 rotation = -3.1415925
 timer = NodePath("../gun_timer")
+white = false
 
 [node name="wall_gun2" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("19_fcvc8")]
 position = Vector2(304, 56)

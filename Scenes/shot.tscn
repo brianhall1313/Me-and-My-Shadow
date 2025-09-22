@@ -41,4 +41,7 @@ sprite_frames = SubResource("SpriteFrames_nac6n")
 animation = &"shot"
 frame_progress = 0.04953028
 
+[node name="explosion_point" type="Marker2D" parent="."]
+position = Vector2(7, 0)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
