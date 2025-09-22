@@ -7,7 +7,6 @@ extends Node2D
 @onready var white_door = $white_door
 @onready var pause_menu: PanelContainer = $pause_menu
 
-
 var check_player_damaged:bool = false
 var is_paused:bool = false
 
