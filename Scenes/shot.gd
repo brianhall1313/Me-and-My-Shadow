@@ -30,5 +30,5 @@ func _on_body_entered(body: Node2D) -> void:
 	get_parent().add_child(new)
 	new.global_position = explosion_point.global_position
 	new.explode(is_white)
-	
+	AudioController.shot_hit.play()
 	queue_free()

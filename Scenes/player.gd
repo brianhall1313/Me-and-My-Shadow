@@ -124,7 +124,7 @@ func take_damage():
 		new.modulate = Color.BLACK
 	new.position = position
 	new.explode()
-	GlobalSignalBus.player_damage.emit()
+	GlobalSignalBus.emit_player_damage()
 
 
 

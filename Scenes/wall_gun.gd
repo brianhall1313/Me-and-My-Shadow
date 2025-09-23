@@ -12,6 +12,7 @@ func _ready() -> void:
 
 
 func shoot() -> void:
+	AudioController.shot_fired.play()
 	var new = Global.shot.instantiate()
 	add_child(new)
 	new.shoot(self.global_position,self.global_rotation,white)

@@ -46,7 +46,7 @@ func handle_acceleration(direction,delta):
 
 
 func push(value):
-	GlobalSignalBus.pushing.emit(value)
+	GlobalSignalBus.emit_pushing(value)
 
 func pushing(vector):
 	is_being_pushed = true

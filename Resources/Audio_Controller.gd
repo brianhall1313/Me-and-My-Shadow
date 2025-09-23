@@ -8,6 +8,8 @@ extends Node
 @onready var click_on: AudioStreamPlayer = $Click_On
 @onready var click_off: AudioStreamPlayer = $Click_Off
 @onready var wall_jump: AudioStreamPlayer = $Wall_jump
+@onready var shot_hit: AudioStreamPlayer = $Shot_Hit
+@onready var shot_fired: AudioStreamPlayer = $Shot_Fired
 
 
 

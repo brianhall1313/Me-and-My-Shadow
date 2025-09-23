@@ -8,4 +8,4 @@ func _ready() -> void:
 
 
 func _on_button_up() -> void:
-	GlobalSignalBus.level_button_pressed.emit(int(text))
+	GlobalSignalBus.emit_level_button_pressed(int(text))

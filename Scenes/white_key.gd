@@ -10,6 +10,6 @@ func do_key_stuff():
 
 
 func _on_body_entered(_body):
-	GlobalSignalBus.white_key_pickup.emit()
+	GlobalSignalBus.emit_white_key_pickup()
 	do_key_stuff()
 	queue_free()
