@@ -4,7 +4,7 @@ const levels:Array = [
 	"res://Scenes/level_0.tscn",
 	"res://Scenes/level_1.tscn",
 	"res://Scenes/level_2.tscn",
-	"re://Scenes/gun_intro.tscn",
+	"res://Scenes/gun_intro.tscn",
 	"res://Scenes/level_3.tscn",
 	"res://Scenes/displaced_platform.tscn",
 	"res://Scenes/level_wall_jump.tscn",
